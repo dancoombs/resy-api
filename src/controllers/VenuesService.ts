@@ -16,6 +16,7 @@ export interface VenueToWatch {
   uuid: string;
   partySize?: number;
   allowedDates: string[];
+  cron: string;
 }
 
 interface DbSchema {

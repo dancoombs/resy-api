@@ -139,9 +139,17 @@ const regenerateHeaders = async () => {
   }
 };
 
-cron.scheduleJob("59 08 * * *", regenerateHeaders);
-cron.scheduleJob("00 09 * * *", refreshAvailability);
-
+// Always refresh at the end of an hour
+cron.scheduleJob("59 * * * *", regenerateHeaders);
+// Set configured cron jobs
+venuesService.init().then(async () => {
+  const venuesToSearchFor = await venuesService.getWatchedVenues();
+  for (const venue of venuesToSearchFor) {
+    log.info(`Setting cron job with ${venue.cron}`)
+    cron.scheduleJob(venue.cron, refreshAvailability);
+  }
+});
+// Try once at start
 regenerateHeaders().then(async () => {
   await refreshAvailability();
 });
