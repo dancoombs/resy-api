@@ -6,7 +6,9 @@ import type { VenueToWatch } from "./controllers/VenuesService";
 import VenuesService from "./controllers/VenuesService";
 import dayjs from "dayjs";
 import type { EnhancedSlot } from "./types/find";
+import * as dotenv from 'dotenv';
 
+dotenv.config();
 const email = process.env.RESY_EMAIL!;
 const password = process.env.RESY_PASSWORD!;
 const service = new ResyService({
@@ -136,9 +138,9 @@ const regenerateHeaders = async () => {
     process.exit(1);
   }
 };
-// every day fetch every post
-cron.scheduleJob("*/5 * * * *", refreshAvailability);
-cron.scheduleJob("1 * * * *", regenerateHeaders);
+
+cron.scheduleJob("59 08 * * *", regenerateHeaders);
+cron.scheduleJob("00 09 * * *", refreshAvailability);
 
 regenerateHeaders().then(async () => {
   await refreshAvailability();
