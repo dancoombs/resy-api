@@ -15,7 +15,7 @@ export interface VenueToWatch {
   maxTime: string;
   uuid: string;
   partySize?: number;
-  allowedDates: string[];
+  intervalDays: number;
   cron: string;
 }
 
