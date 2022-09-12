@@ -5,7 +5,8 @@ import TextService from "./controllers/TextService";
 import type { VenueToWatch } from "./controllers/VenuesService";
 import VenuesService from "./controllers/VenuesService";
 import dayjs from "dayjs";
-import type { EnhancedSlot } from "./types/find";
+import type { EnhancedSlot} from "./types/find";
+import { Type } from "./types/find";
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -88,7 +89,9 @@ const refreshAvailabilityForVenue = async (venue: VenueToWatch) => {
       const minTime = dayjs(`${start.format("YYYY-MM-DD")} ${venue.minTime}`);
       const maxTime = dayjs(`${start.format("YYYY-MM-DD")} ${venue.maxTime}`);
       slot.start = start;
-      return start >= minTime && start <= maxTime;
+
+      const isPatio = slot.config.type == Type.Patio;
+      return (venue.patioOkay || !isPatio) && (start >= minTime && start <= maxTime);
     });
 
     if (possibleSlots.length) {

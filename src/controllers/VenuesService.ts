@@ -17,6 +17,7 @@ export interface VenueToWatch {
   partySize?: number;
   intervalDays: number;
   cron: string;
+  patioOkay: boolean;
 }
 
 interface DbSchema {
