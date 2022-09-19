@@ -80,6 +80,7 @@ export enum Type {
   Cafe = "Cafe",
   DiningRoom = "Dining Room",
   Patio = "Patio",
+  AmexPatio = "Amex Patio"
 }
 
 export interface SlotDate {

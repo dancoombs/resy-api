@@ -90,7 +90,7 @@ const refreshAvailabilityForVenue = async (venue: VenueToWatch) => {
       const maxTime = dayjs(`${start.format("YYYY-MM-DD")} ${venue.maxTime}`);
       slot.start = start;
 
-      const isPatio = slot.config.type == Type.Patio;
+      const isPatio = slot.config.type == Type.Patio || slot.config.type == Type.AmexPatio;
       return (venue.patioOkay || !isPatio) && (start >= minTime && start <= maxTime);
     });
 
