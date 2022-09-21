@@ -96,7 +96,8 @@ const refreshAvailabilityForVenue = async (venue: VenueToWatch) => {
 
     if (possibleSlots.length) {
       await parsePossibleSlots(venue, possibleSlots);
-      return;
+    } else {
+      log.info(`No slots found for ${venue.name} in time range ${venue.minTime}, ${venue.maxTime} Paito okay? ${venue.patioOkay}`)
     }
   } catch (e) {
     console.error(e);
