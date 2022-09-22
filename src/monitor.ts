@@ -51,12 +51,12 @@ const parsePossibleSlots = async (
     });
 
     try {
-      const bookingResponse = await service.book({
+      const _bookingResponse = await service.book({
         book_token: timeDetails!.data!.book_token!.value!,
         struct_payment_method: `{"id":${userDetails.data.payment_methods[0].id}}`,
         source_id: "resy.com-venue-details",
       });
-      venue.reservationDetails = bookingResponse.data;
+      //venue.reservationDetails = bookingResponse.data;
       log.info(`Successfully booked at ${venue.name}`);
 
       await textController.sendText(
