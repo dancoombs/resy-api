@@ -8,6 +8,8 @@ import dayjs from "dayjs";
 import type { EnhancedSlot} from "./types/find";
 import { Type } from "./types/find";
 import * as dotenv from 'dotenv';
+import axios from 'axios'
+
 
 dotenv.config();
 const email = process.env.RESY_EMAIL!;
@@ -64,8 +66,12 @@ const parsePossibleSlots = async (
       );
       return
     } catch (e) {
-      log.error(e)
-      continue;
+      if (axios.isAxiosError(e)) {
+        console.log(e.response)
+      } else {
+        log.error(e)
+      }
+      return;
     }
   }
 };

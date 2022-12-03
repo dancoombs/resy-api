@@ -1,0 +1,96 @@
+{
+    "venues": [
+      {
+        "name": "4 Charles Prime Rib",
+        "id": 834,
+        "notified": false,
+        "minTime": "17:00",
+        "preferredTime": "20:00",
+        "maxTime": "21:00",
+        "shouldBook": true,
+        "partySize": 2,
+        "intervalDays": 30,
+        "cron": "00 13 * * *",
+        "patioOkay": false
+      },
+      {
+        "name": "Dante",
+        "id": 1290,
+        "notified": false,
+        "minTime": "18:00",
+        "preferredTime": "19:30",
+        "maxTime": "20:00",
+        "shouldBook": true,
+        "partySize": 4,
+        "intervalDays": 30,
+        "cron": "00 04 * * *",
+        "patioOkay": false
+      },
+      {
+        "name": "Carbone",
+        "id": 6194,
+        "notified": false,
+        "minTime": "18:00",
+        "preferredTime": "19:30",
+        "maxTime": "22:00",
+        "shouldBook": true,
+        "partySize": 4,
+        "intervalDays": 31,
+        "cron": "00 14 * * *",
+        "patioOkay": false
+      },
+      {
+        "name": "Via Carota",
+        "id": 2567,
+        "notified": false,
+        "minTime": "18:00",
+        "preferredTime": "19:30",
+        "maxTime": "22:00",
+        "shouldBook": true,
+        "partySize": 4,
+        "intervalDays": 30,
+        "cron": "00 14 * * *",
+        "patioOkay": false,
+        "uuid": "09ef59dc-f0bb-4e43-8a0a-ad35605c1db2"
+      },
+      {
+        "name": "I Sodi",
+        "id": 443,
+        "notified": false,
+        "minTime": "18:00",
+        "preferredTime": "19:30",
+        "maxTime": "22:00",
+        "shouldBook": true,
+        "partySize": 6,
+        "intervalDays": 13,
+        "cron": "00 04 * * *",
+        "patioOkay": false
+      },
+      {
+        "name": "Pastis",
+        "id": 6484,
+        "notified": false,
+        "minTime": "18:00",
+        "preferredTime": "19:30",
+        "maxTime": "22:00",
+        "shouldBook": true,
+        "partySize": 4,
+        "intervalDays": 28,
+        "cron": "00 04 * * *",
+        "patioOkay": false
+      },
+      {
+        "name": "Monkey Bar",
+        "id": 60058,
+        "notified": false,
+        "minTime": "17:00",
+        "preferredTime": "20:00",
+        "maxTime": "21:00",
+        "shouldBook": true,
+        "partySize": 2,
+        "intervalDays": 14,
+        "cron": "00 13 * * *",
+        "patioOkay": false
+      }
+    ]
+}

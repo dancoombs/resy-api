@@ -9,6 +9,7 @@ import dayjs from "dayjs";
 import type { VenueCalendarResponse } from "../types/types";
 import type { GeoIpResponse } from "../types/types";
 import type { UserResponse } from "../types/types";
+import log from "../log";
 
 const BASE_URL = "https://api.resy.com/";
 const routes = {
@@ -227,7 +228,8 @@ class ResyService extends BaseService {
       day: date,
       party_size: numSeats,
     });
-    const slots = venueSearch.data.results?.venues?.[0].slots || [];
+    log.info(`venueId ${venueId}: results ${venueSearch.data.results}}`)
+    const slots = venueSearch.data.results.venues[0].slots || [];
     return slots as FindResponse["results"]["venues"][number]["slots"];
   };
 
