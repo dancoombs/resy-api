@@ -150,6 +150,9 @@ class ResyService extends BaseService {
     opts.party_size ??= 2;
     opts.lat ??= 0;
     opts.long ??= 0;
+
+    log.info(`${JSON.stringify(opts)} : ${JSON.stringify(this.headers)}`)
+
     return this.get<FindResponse>(routes.search, {
       params: opts,
       headers: this.headers,
