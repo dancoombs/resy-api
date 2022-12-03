@@ -228,7 +228,7 @@ class ResyService extends BaseService {
       day: date,
       party_size: numSeats,
     });
-    log.info(`venueId ${venueId}: results ${venueSearch.data.results}}`)
+    log.info(`venueId ${venueId}: results ${JSON.stringify(venueSearch.data.results)}}`)
     const slots = venueSearch.data.results.venues[0].slots || [];
     return slots as FindResponse["results"]["venues"][number]["slots"];
   };
