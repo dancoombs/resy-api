@@ -53,7 +53,7 @@ const parsePossibleSlots = async (
     });
 
     try {
-      if (venue.needs_payment) {
+      if (venue.needsPayment) {
         const _bookingResponse = await service.book({
           book_token: timeDetails!.data!.book_token!.value!,
           struct_payment_method: `{"id":${userDetails.data.payment_methods[0].id}}`,
@@ -65,8 +65,6 @@ const parsePossibleSlots = async (
           source_id: "resy.com-venue-details",
         });
       }
-
-
 
       //venue.reservationDetails = bookingResponse.data;
       log.info(`Successfully booked at ${venue.name}`);
