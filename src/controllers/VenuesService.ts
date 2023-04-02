@@ -18,6 +18,7 @@ export interface VenueToWatch {
   intervalDays: number;
   cron: string;
   patioOkay: boolean;
+  needs_payment: boolean;
 }
 
 interface DbSchema {

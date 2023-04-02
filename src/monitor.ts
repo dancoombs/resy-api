@@ -53,11 +53,21 @@ const parsePossibleSlots = async (
     });
 
     try {
-      const _bookingResponse = await service.book({
-        book_token: timeDetails!.data!.book_token!.value!,
-        struct_payment_method: `{"id":${userDetails.data.payment_methods[0].id}}`,
-        source_id: "resy.com-venue-details",
-      });
+      if (venue.needs_payment) {
+        const _bookingResponse = await service.book({
+          book_token: timeDetails!.data!.book_token!.value!,
+          struct_payment_method: `{"id":${userDetails.data.payment_methods[0].id}}`,
+          source_id: "resy.com-venue-details",
+        });
+      } else {
+        const _bookingResponse = await service.book({
+          book_token: timeDetails!.data!.book_token!.value!,
+          source_id: "resy.com-venue-details",
+        });
+      }
+
+
+
       //venue.reservationDetails = bookingResponse.data;
       log.info(`Successfully booked at ${venue.name}`);
 

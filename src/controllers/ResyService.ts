@@ -56,7 +56,7 @@ export interface BookQueryObj {
   book_token: string;
   replace?: string;
   source_id?: string;
-  struct_payment_method: string;
+  struct_payment_method?: string;
 }
 
 export interface Geo {
@@ -104,7 +104,7 @@ class ResyService extends BaseService {
     return this.post<{ result: boolean }>(routes.emailExists, body);
   };
 
-  generateClientToken = async (authToken: string, apiKey: string) => {
+  generateClientToken = async (_authToken: string, _apiKey: string) => {
     return this.get<{ client_token: string }>(routes.generateClientToken, {
       headers: this.headers,
     });

@@ -91,6 +91,32 @@
         "intervalDays": 14,
         "cron": "00 13 * * *",
         "patioOkay": false
+      },
+      {
+        "name": "Don Angie",
+        "id": 1505,
+        "notified": false,
+        "minTime": "20:30",
+        "preferredTime": "21:00",
+        "maxTime": "21:30",
+        "shouldBook": true,
+        "partySize": 4,
+        "intervalDays": 7,
+        "cron": "00 13 * * *",
+        "patioOkay": false
+      },
+      {
+        "name": "The Back Room at Double Chicken Please",
+        "id": 42534,
+        "notified": false,
+        "minTime": "18:00",
+        "preferredTime": "20:00",
+        "maxTime": "21:30",
+        "shouldBook": true,
+        "partySize": 2,
+        "intervalDays": 6,
+        "cron": "00 4 * * *",
+        "patioOkay": false
       }
     ]
 }
