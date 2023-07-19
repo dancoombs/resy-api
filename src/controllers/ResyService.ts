@@ -110,16 +110,19 @@ class ResyService extends BaseService {
     });
   };
 
-  generateHeadersAndLogin = async () => {
-    const loginResp = await this.login(this.email, this.password);
-    const authToken = loginResp.data.token;
+  generateHeadersAndLogin = async (token?: string) => {
+    let authToken = token;
+    if (!authToken) {
+      const loginResp = await this.login(this.email, this.password);
+      authToken = loginResp.data.token;
+    }
+
     this.headers = {
       ...this.headers,
       authorization: 'ResyAPI api_key="VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5"',
       "x-resy-auth-token": authToken,
       "x-resy-universal-auth": authToken,
     };
-    return loginResp;
   };
 
   login = async (email?: string, password?: string) => {

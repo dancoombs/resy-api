@@ -5,7 +5,5 @@ const run = async () => {
     email: process.env.RESY_EMAIL!,
     password: process.env.RESY_PASSWORD!,
   });
-  const loginResp = await service.generateHeadersAndLogin();
-  const data = loginResp.data;
-  console.log(loginResp);
+  await service.generateHeadersAndLogin();
 };

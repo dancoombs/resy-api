@@ -14,6 +14,7 @@ import axios from 'axios'
 dotenv.config();
 const email = process.env.RESY_EMAIL!;
 const password = process.env.RESY_PASSWORD!;
+const token = process.env.RESY_TOKEN!;
 const service = new ResyService({
   email,
   password,
@@ -140,7 +141,7 @@ const regenerateHeaders = async () => {
       );
       return;
     }
-    await service.generateHeadersAndLogin();
+    await service.generateHeadersAndLogin(token);
   } catch (e) {
     log.error(e);
     log.error("Error regenerating headers and logging in");

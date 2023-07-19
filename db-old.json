@@ -114,9 +114,11 @@
         "maxTime": "21:30",
         "shouldBook": true,
         "partySize": 2,
-        "intervalDays": 6,
+        "intervalDays": 7,
         "cron": "00 4 * * *",
-        "patioOkay": false
+        "patioOkay": false,
+        "uuid": "8c51fd71-682d-42fb-bdbd-604f3278a3a6",
+        "needsPayment": true
       }
     ]
 }
